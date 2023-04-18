@@ -266,7 +266,7 @@ section {
 
   .facil-list {
     flex-direction: column;
-    align-items: center;
+    align-items: center !important;
   }
 
   .message-card {
