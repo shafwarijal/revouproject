@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <title>RevoU Project</title>
+    <script defer src="js/scripts.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <img src="/assets/logo_revou.svg" alt="" class="logo" />
+        <nav class="navbar-menu">
+          <a href="/index.html" class="menu">Home</a>
+          <a href="#message" class="menu">Message Us</a>
+          <a href="/profile.html" class="menu">Our Profile</a>
+          <a href="/achiev" class="menu">Achievement</a>
+        </nav>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <section id="hero">
+          <h2 style="margin-top: 30px">
+            Hii <span id="name"></span>, Welcome To Website
+          </h2>
+
+          <!-- <script>
+            var nameinput = prompt("Masukkan nama kamu!");
+            document.getElementById("name").innerText = nameinput;
+          </script> -->
+
+          <p>Ini adalah website latihan pertama</p>
+          <br />
+          <img src="/assets/school2.jpg" alt="" class="hero-img" />
+          <br />
+        </section>
+
+        <section id="facilitation">
+          <h1>Our Facilitation</h1>
+          <div class="facil-list">
+            <div>
+              <img src="/assets/jakarta.jpg" alt="" class="facil-img" />
+              <p>Professional</p>
+              <p>Teacher</p>
+            </div>
+            <div>
+              <img src="/assets/bandung.jpg" alt="" class="facil-img" />
+              <p>Sport Field</p>
+            </div>
+            <div>
+              <img src="/assets/surabaya.jpg" alt="" class="facil-img" />
+              <p>Classroom</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="message">
+          <h1 style="margin-top: 100px">Message Us</h1>
+          <div class="message-card">
+            <div class="card-form">
+              <form
+                class="message-form"
+                name="message-form"
+                onsubmit="return validateForm()"
+              >
+                <div class="row">
+                  <label for="name-form" class="label">Nama</label>
+                  <div class="form-input">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Nama"
+                      name="name-form"
+                    />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <label for="date-form" class="label">Tanggal Lahir</label>
+                  <div class="form-input">
+                    <input
+                      type="date"
+                      class="form-control"
+                      name="birth-date-form"
+                    />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <label for="nama" class="label">Jenis Kelamin</label>
+                  <div class="form-input">
+                    <input
+                      type="radio"
+                      name="gender-form"
+                      id="male"
+                      value="Laki-laki"
+                    />Laki-laki
+                    <input
+                      type="radio"
+                      name="gender-form"
+                      id="female"
+                      value="Perempuan"
+                      style="margin-left: 10px"
+                    />Perempuan
+                  </div>
+                </div>
+                <div class="row">
+                  <label for="message-input-form" class="label">Pesan</label>
+                  <div class="form-input">
+                    <textarea
+                      name="message-input-form"
+                      rows="4"
+                      class="form-control"
+                      placeholder="Pesan"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="btn" value="submit">
+                    Submit
+                  </button>
+                </div>
+              </form>
+
+              <script>
+                function validateForm() {
+                  const nameForm =
+                    document.forms["message-form"]["name-form"].value;
+                  const birthDateForm =
+                    document.forms["message-form"]["birth-date-form"].value;
+                  const genderForm =
+                    document.forms["message-form"]["gender-form"].value;
+                  const messagesForm =
+                    document.forms["message-form"]["message-input-form"].value;
+
+                  if (
+                    nameForm == "" ||
+                    birthDateForm == "" ||
+                    genderForm == "" ||
+                    messagesForm == ""
+                  ) {
+                    alert("Tidak boleh ada yang kosong");
+                    return false;
+                  }
+
+                  setSenderUI(
+                    nameForm,
+                    birthDateForm,
+                    genderForm,
+                    messagesForm
+                  );
+
+                  return false;
+                }
+
+                function setSenderUI(
+                  nameForm,
+                  birthDateForm,
+                  genderForm,
+                  messagesForm
+                ) {
+                  document.getElementById("sender-name-form").innerText =
+                    nameForm;
+                  document.getElementById("sender-birth-date-form").innerText =
+                    birthDateForm;
+                  document.getElementById("sender-gender-form").innerText =
+                    genderForm;
+                  document.getElementById(
+                    "sender-message-input-form"
+                  ).innerText = messagesForm;
+                }
+              </script>
+            </div>
+
+            <div class="card-output">
+              <div class="row">
+                <label for="nama" class="label" style="justify-content: center"
+                  >Current Time : &nbsp; <span id="date-time"></span>
+                </label>
+                <script>
+                  const date = new Date();
+                  document.getElementById("date-time").innerHTML = date;
+                </script>
+              </div>
+              <div class="row">
+                <label class="label"
+                  >Nama : &nbsp; <span id="sender-name-form"></span
+                ></label>
+              </div>
+              <div class="row">
+                <label class="label"
+                  >Tanggal Lahir : &nbsp;
+                  <span id="sender-birth-date-form"></span
+                ></label>
+              </div>
+              <div class="row">
+                <label class="label"
+                  >Jenis Kelamin : &nbsp; <span id="sender-gender-form"></span
+                ></label>
+              </div>
+              <div class="row">
+                <label class="label"
+                  >Pesan : &nbsp; <span id="sender-message-input-form"></span
+                ></label>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
